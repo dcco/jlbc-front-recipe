@@ -22,7 +22,9 @@
 	--darkcoal: hsl(24, 5%, 18%);
 }
 
-	/* main layout css */
+	/* version specific css */
+
+	/* -- for desktop */
 
 body {
 	background-color: var(--eggshell);
@@ -32,16 +34,59 @@ body {
 	font-size: 16px;
 }
 
-.page {
-	background-color: var(--white);
-	width: 736px;
-	padding: 40px;
-	border-radius: 22px;
-	box-sizing: border-box;
-	margin: auto;
-	margin-top: 123px;
-	margin-bottom: 123px;
+@media (min-width:736px) {
+	.page {
+		background-color: var(--white);
+		width: 736px;
+		padding: 40px;
+		border-radius: 22px;
+		box-sizing: border-box;
+		margin: auto;
+		margin-top: 123px;
+		margin-bottom: 123px;
+	}
+
+	.splash {
+		width: 100%;
+		box-sizing: border-box;
+		border-radius: 8px;
+	}
+
+	.mobile-break { display: none; }
 }
+
+	/* -- for mobile */
+
+@media not (min-width:736px) {
+	body {
+		margin: 0;
+	}
+
+	.page {
+		background-color: var(--white);
+		padding: 0px;
+	}
+
+	.page-main {
+		padding: 32px;
+	}
+
+	.splash {
+		width: 100%;
+	}
+
+	.title {
+		margin-top: 0;
+	}
+
+	.attribution {
+		background-color: var(--white);
+		padding: 16px;
+		padding-left: 24px;
+	}
+}
+
+	/* main layout css */
 
 .title {
 	color: var(--darkcoal);
@@ -77,12 +122,6 @@ body {
 
 p, li {
 	line-height: 24px;
-}
-
-img {
-	width: 100%;
-	box-sizing: border-box;
-	border-radius: 8px;
 }
 
 hr {
