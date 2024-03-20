@@ -168,18 +168,21 @@ td:first-child {
 	/* list css */
 
 ul, ol {
+		/* margin where dot starts */
 	margin-left: 8px;
 	margin-bottom: 0px;
 	padding-left: 0px;
 }
 
 li {
+		/* padding = space where marker can appear */
 	padding-left: 34px;
 	list-style-type: none;
 	counter-increment: step-counter;
 }
 
 li::before {
+		/* negative margin prevents it from overlapping list-item */
 	margin-left: -34px;
 	display: inline-block;
 	color: var(--nutmeg);
